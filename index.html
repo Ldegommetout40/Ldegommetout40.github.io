@@ -423,7 +423,23 @@ function logoutAdmin() {
   document.getElementById('adminBtn').textContent = 'Admin';
   document.querySelectorAll('.ba-delete').forEach(b => b.style.display = 'none');
 }
-
+<!-- modify this form HTML and place wherever you want your form -->
+<form
+  action="https://formspree.io/f/mpqonzkr"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+   
 </script>
 </body>
 </html>
