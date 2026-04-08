@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>L'dégomme tout – Aérogommage & Décapage – Saint-Paul-lès-Dax (40)</title>
+<meta name="description" content="Atelier d'aérogommage et décapage à Saint-Paul-lès-Dax. Laura Sayes. Devis gratuit – 06 42 89 93 33"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>/* ============================================================
+   L'DÉGOMME TOUT — FEUILLE DE STYLE
+   ============================================================ */
+
+/* ─────────────────────────────────────────────
+   🎨 COULEURS — modifier ici pour changer le thème
+───────────────────────────────────────────── */
+:root {
+  --rouge:      #c8241a;
+  --rouge-dark: #9e1a12;
+  --bleu:       #1a5276;
+  --creme:      #fdf5e6;
+  --creme-dark: #f5e6c8;
+  --noir:       #1a1a1a;
+  --gris:       #4a4a4a;
+  --blanc:      #ffffff;
+  --or:         #d4a017;
+  --shadow:     0 4px 24px rgba(0,0,0,.18);
+  --radius:     12px;
+}
+
+/* BASE */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; background: var(--creme); color: var(--noir); overflow-x: hidden; }
+
+/* HEADER */
+header { position: sticky; top: 0; z-index: 100; background: var(--rouge); box-shadow: 0 3px 0 var(--rouge-dark); border-bottom: 4px solid var(--rouge-dark); }
+nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: .4rem 2rem; gap: 1rem; position: relative; }
+.nav-logo { display: flex; align-items: center; gap: .75rem; text-decoration: none; }
+.nav-logo img { height: 110px; width: auto; border: none; object-fit: contain; background: transparent; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+.nav-links a, .nav-links button { color: var(--blanc); text-decoration: none; font-weight: 700; font-size: .7rem; letter-spacing: .04em; text-transform: uppercase; padding: .3rem 0; border: none; border-bottom: 2px solid transparent; background: transparent; cursor: pointer; font-family: 'Nunito', sans-serif; line-height: 1; vertical-align: baseline; transition: border-color .2s; }
+.nav-links a:hover, .nav-links button:hover { border-color: var(--blanc); }
+.nav-links li { border-bottom: 1px solid rgba(255,255,255,.15); }
+.burger { display: none; background: none; border: none; cursor: pointer; padding: .3rem; z-index: 160; position: relative; }
+.burger span { display: block; width: 26px; height: 3px; background: var(--blanc); border-radius: 3px; margin: 5px 0; }
+
+
+
+/* VIDÉO */
+.video-hero { position: relative; width: 100%; height: calc(100vh - 120px); overflow: hidden; background: #000; }
+.video-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.video-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.52); }
+.video-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; gap: 1rem; }
+.video-text p { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.2rem,3.5vw,2.2rem); color: rgba(255,255,255,.88); letter-spacing: .1em; line-height: 1.2; text-shadow: 0 2px 15px rgba(0,0,0,.6); max-width: 800px; text-transform: uppercase; }
+
+/* COMMUN */
+section { position: relative; z-index: 1; }
+section[id] { scroll-margin-top: 120px; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem,5vw,3.5rem); line-height: 1; margin-bottom: .5rem; }
+.section-sub { font-size: 1rem; color: var(--gris); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: .75rem; }
+.divider { width: 70px; height: 5px; background: var(--rouge); border-radius: 3px; margin-bottom: 1.75rem; }
+.container { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.btn-submit { flex: 2; padding: .75rem; background: var(--rouge); color: var(--blanc); border: none; border-radius: 50px; cursor: pointer; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: .06em; box-shadow: 0 3px 0 var(--rouge-dark); transition: transform .15s, box-shadow .15s; }
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--rouge-dark); }
+
+
+
+
+/* SERVICES */
+#services { background: var(--creme); }
+.services-header { text-align: center; }
+.services-header .divider { margin: 0 auto 2rem; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 1.75rem; margin-top: 3rem; }
+.service-card { background: var(--blanc); border-radius: var(--radius); border: 2px solid var(--creme-dark); padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--rouge); }
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.service-icon { font-size: 2.8rem; margin-bottom: 1rem; display: block; line-height: 1; }
+.service-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.65rem; color: var(--rouge); margin-bottom: .6rem; }
+.service-desc { font-size: .95rem; line-height: 1.6; color: var(--gris); }
+.service-tags { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+.tag { background: var(--creme-dark); color: var(--gris); font-size: .72rem; font-weight: 700; padding: .25rem .6rem; border-radius: 50px; letter-spacing: .04em; text-transform: uppercase; }
+
+/* RÉALISATIONS */
+#realisations { background: var(--bleu); color: var(--blanc); }
+#realisations .section-title { color: var(--blanc); }
+#realisations .section-sub { color: rgba(255,255,255,.65); }
+#realisations .divider { background: var(--or); }
+.gallery-header { text-align: center; }
+.gallery-grid { display: flex; flex-direction: column; gap: 3rem; margin-top: 3rem; }
+.ba-card { background: rgba(255,255,255,.07); border-radius: 16px; border: 1px solid rgba(255,255,255,.15); overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.ba-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.35); }
+.ba-photos { display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+.ba-photos::after { content: '→'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 5; width: 52px; height: 52px; border-radius: 50%; background: var(--rouge); color: var(--blanc); font-size: 1.4rem; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 4px var(--blanc); pointer-events: none; }
+.ba-side { position: relative; overflow: hidden; }
+.ba-side img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform .35s ease; }
+.ba-card:hover .ba-side img { transform: scale(1.03); }
+.ba-badge { position: absolute; top: .75rem; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; letter-spacing: .1em; padding: .3rem .9rem; border-radius: 50px; pointer-events: none; z-index: 3; }
+.ba-badge.avant { left: .75rem; background: rgba(0,0,0,.55); color: #ddd; }
+.ba-badge.apres { right: .75rem; background: var(--rouge); color: var(--blanc); }
+.ba-divider { width: 4px; background: var(--blanc); position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); z-index: 4; pointer-events: none; }
+.ba-info { padding: 1.25rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.ba-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--blanc); }
+
+
+
+
+
+.add-card:hover 
+
+
+
+/* MODAL GALERIE */
+
+
+
+.modal-overlay.open 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PROCESSUS */
+#processus { background: var(--creme-dark); }
+.process-steps { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 0; margin-top: 3rem; position: relative; }
+.process-steps::before { content: ''; position: absolute; top: 40px; left: 8%; right: 8%; height: 3px; background: linear-gradient(to right,var(--rouge),var(--bleu)); z-index: 0; }
+.step { text-align: center; padding: 0 1rem; position: relative; z-index: 1; }
+.step-num { width: 80px; height: 80px; border-radius: 50%; background: var(--rouge); color: var(--blanc); font-family: 'Bebas Neue', sans-serif; font-size: 2rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; border: 4px solid var(--creme-dark); box-shadow: 0 4px 0 var(--rouge-dark); transition: transform .2s; }
+.step:hover .step-num { transform: scale(1.08) rotate(-5deg); }
+.step h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; color: var(--bleu); margin-bottom: .5rem; }
+.step p { font-size: .9rem; color: var(--gris); line-height: 1.5; }
+
+/* À PROPOS */
+#about { background: var(--blanc); }
+.about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.about-visual { position: relative; }
+.about-visual-main { width: 100%; aspect-ratio: 1/1; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.about-visual-main img { width: 100%; height: 100%; object-fit: cover; }
+.about-badge { position: absolute; bottom: -20px; right: -20px; width: 120px; height: 120px; border-radius: 50%; background: var(--rouge); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 0 var(--rouge-dark); border: 4px solid var(--blanc); }
+.about-badge span:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--blanc); line-height: 1; }
+.about-badge span:last-child { font-size: .62rem; font-weight: 700; color: rgba(255,255,255,.8); text-transform: uppercase; letter-spacing: .06em; text-align: center; padding: 0 .4rem; }
+.about-list { list-style: none; margin: 1.5rem 0; }
+.about-list li { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: .9rem; font-size: .95rem; line-height: 1.5; }
+.about-list li::before { content: '✔'; color: var(--rouge); font-size: 1rem; flex-shrink: 0; margin-top: .1rem; }
+
+/* CONTACT */
+#contact { background: var(--rouge); background-image: repeating-linear-gradient(-55deg,transparent,transparent 24px,rgba(0,0,0,.04) 24px,rgba(0,0,0,.04) 26px); }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.contact-info .section-title { color: var(--blanc); }
+.contact-info .section-sub { color: rgba(255,255,255,.7); }
+.contact-info .divider { background: var(--blanc); }
+.contact-info p { color: rgba(255,255,255,.85); line-height: 1.7; margin-bottom: 1.5rem; }
+.contact-items { display: flex; flex-direction: column; gap: 1rem; }
+.contact-item { display: flex; align-items: center; gap: 1rem; background: rgba(0,0,0,.15); padding: .9rem 1.2rem; border-radius: var(--radius); }
+.contact-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--blanc); color: var(--rouge); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+.contact-item-info strong { display: block; color: var(--blanc); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .1rem; }
+.contact-item-info span, .contact-item-info a { color: rgba(255,255,255,.9); font-weight: 600; text-decoration: none; }
+.contact-item-info a:hover { text-decoration: underline; }
+
+
+
+.cf-g label { display: block; font-weight: 700; font-size: .85rem; margin-bottom: .4rem; letter-spacing: .04em; text-transform: uppercase; color: var(--gris); }
+.cf-g .label-opt { font-weight: 400; text-transform: none; letter-spacing: 0; color: #bbb; font-size: .8rem; margin-left: .3rem; }
+.cf-g input[type=text], .cf-g textarea { width: 100%; padding: .65rem .9rem; border: 2px solid var(--creme-dark); border-radius: 8px; font-family: 'Nunito', sans-serif; font-size: .95rem; color: var(--noir); transition: border-color .2s; background: var(--creme); }
+.cf-g input:focus, .cf-g textarea:focus { outline: none; border-color: var(--rouge); }
+.cf-g textarea { resize: vertical; min-height: 100px; }
+
+.cf-photo:hover { border-color: var(--rouge); background: #fdf0ed; }
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+footer { background: var(--noir); color: rgba(255,255,255,.6); padding: 2rem; text-align: center; font-size: .85rem; }
+footer strong { color: var(--rouge); }
+footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+footer a:hover { color: var(--blanc); }
+
+/* ADMIN MODAL */
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+  .burger { display: block; order: -1; }
+  .nav-logo img { height: 70px; }
+  nav { padding: .4rem 1rem; }
+  .nav-logo { position: absolute; left: 50%; transform: translateX(-50%); }
+  .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(158,26,18,.97); flex-direction: column; gap: 0; padding: 5rem 0 2rem; z-index: 150; overflow-y: auto; }
+  .nav-links.open { display: flex; }
+  .nav-links li { border-bottom: 1px solid rgba(255,255,255,.12); }
+  .nav-links li:last-child { border-bottom: none; }
+  .video-hero { height: 55vh; }
+  .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-badge { bottom: -10px; right: -10px; width: 90px; height: 90px; }
+  .process-steps::before { display: none; }
+  
+  
+}
+
+@keyframes slideInLeft  { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: none; } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX( 40px); } to { opacity: 1; transform: none; } }
+
+.nav-logo img{height:70px;width:auto;border-radius:0;border:none;object-fit:contain;background:transparent}
+nav{padding:.2rem 2rem}
+.nav-links{gap:.25rem}
+.contact-inner{grid-template-columns:1fr;text-align:center}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a class="nav-logo" href="#"><img src="logo.png" alt="Logo L'dégomme tout"/></a>
+    <ul class="nav-links" id="navLinks">
+      <li><button style="background:none;border:none;color:#fff;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;cursor:pointer;width:100%;text-align:center;padding:.6rem 1rem;letter-spacing:.08em;text-transform:uppercase;display:block;white-space:nowrap;" onclick="navLinks.classList.remove('open');document.getElementById('services').scrollIntoView({behavior:'smooth'});">Services</button></li>
+      <li><button style="background:none;border:none;color:#fff;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;cursor:pointer;width:100%;text-align:center;padding:.6rem 1rem;letter-spacing:.08em;text-transform:uppercase;display:block;white-space:nowrap;" onclick="navLinks.classList.remove('open');document.getElementById('realisations').scrollIntoView({behavior:'smooth'});">Réalisations</button></li>
+      <li><button style="background:none;border:none;color:#fff;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;cursor:pointer;width:100%;text-align:center;padding:.6rem 1rem;letter-spacing:.08em;text-transform:uppercase;display:block;white-space:nowrap;" onclick="navLinks.classList.remove('open');document.getElementById('processus').scrollIntoView({behavior:'smooth'});">Processus</button></li>
+      <li><button style="background:none;border:none;color:#fff;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;cursor:pointer;width:100%;text-align:center;padding:.6rem 1rem;letter-spacing:.08em;text-transform:uppercase;display:block;white-space:nowrap;" onclick="navLinks.classList.remove('open');document.getElementById('about').scrollIntoView({behavior:'smooth'});">À propos</button></li>
+      <li><button style="background:rgba(255,255,255,.15);border:none;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2);color:#fff;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;cursor:pointer;width:100%;text-align:center;padding:.6rem 1rem;letter-spacing:.08em;text-transform:uppercase;display:block;white-space:nowrap;" onclick="navLinks.classList.remove('open');document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Devis gratuit</button></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="video-hero">
+  <video autoplay muted loop playsinline preload="auto"><source src="video.webm" type="video/webm"/></video>
+  <div class="video-overlay"></div>
+  <div class="video-text"><p>Spécialiste de l'aérogommage et du décapage dans les Landes</p></div>
+</div>
+
+<section id="services"><div class="container">
+  <div class="services-header reveal"><p class="section-sub">Ce que je fais</p><h2 class="section-title">Mes Prestations</h2><div class="divider"></div></div>
+  <div class="services-grid">
+    <div class="service-card reveal"><span class="service-icon">💨</span><div class="service-name">Aérogommage</div><p class="service-desc">Technique douce utilisant des granulats naturels projetés à l'air comprimé. Parfaite pour décaper sans endommager les surfaces délicates : bois, mobilier ancien, pierre, métal.</p><div class="service-tags"><span class="tag">Bois</span><span class="tag">Meuble</span><span class="tag">Pierre</span><span class="tag">Métal</span></div></div>
+    <div class="service-card reveal"><span class="service-icon">🪑</span><div class="service-name">Restauration mobilier</div><p class="service-desc">Décapage de meubles anciens, chaises, fauteuils, buffets, tables… Remise à nu parfaite du bois pour une peinture, lasure ou vernis dans les meilleures conditions.</p><div class="service-tags"><span class="tag">Fauteuils</span><span class="tag">Tables</span><span class="tag">Buffets</span><span class="tag">Bois massif</span></div></div>
+    <div class="service-card reveal"><span class="service-icon">🔩</span><div class="service-name">Décapage métal</div><p class="service-desc">Élimination de rouille, peintures, vernis et graisses sur toutes pièces métalliques. Préparation parfaite avant traitement ou mise en peinture.</p><div class="service-tags"><span class="tag">Rouille</span><span class="tag">Portail</span><span class="tag">Châssis</span><span class="tag">Pièces auto</span></div></div>
+  </div>
+</div></section>
+
+<section id="realisations"><div class="container">
+  <div class="gallery-header reveal"><p class="section-sub">Mes chantiers</p><h2 class="section-title">Avant / Après</h2><div class="divider" style="margin:0 auto;"></div></div>
+  <div class="gallery-grid">
+    <div class="ba-card reveal"><div class="ba-photos">
+      <div class="ba-side"><img src="photos/chantier1_avant.webp" alt="avant"/><span class="ba-badge avant">AVANT</span></div>
+      <div class="ba-divider"></div>
+      <div class="ba-side"><img src="photos/chantier1_apres.webp" alt="après"/><span class="ba-badge apres">APRÈS</span></div>
+    </div><div class="ba-info"><div class="ba-title">Table &amp; buffet</div></div></div>
+
+    <div class="ba-card reveal"><div class="ba-photos">
+      <div class="ba-side"><img src="photos/chantier2_avant.webp" alt="avant"/><span class="ba-badge avant">AVANT</span></div>
+      <div class="ba-divider"></div>
+      <div class="ba-side"><img src="photos/chantier2_apres.webp" alt="après"/><span class="ba-badge apres">APRÈS</span></div>
+    </div><div class="ba-info"><div class="ba-title">Siège romain</div></div></div>
+
+    <div class="ba-card reveal"><div class="ba-photos">
+      <div class="ba-side"><img src="photos/chantier3_avant.webp" alt="avant"/><span class="ba-badge avant">AVANT</span></div>
+      <div class="ba-divider"></div>
+      <div class="ba-side"><img src="photos/chantier3_apres.webp" alt="après"/><span class="ba-badge apres">APRÈS</span></div>
+    </div><div class="ba-info"><div class="ba-title">Moteur de cyclomoteur</div></div></div>
+  </div>
+</div></section>
+
+<section id="processus"><div class="container">
+  <div class="reveal" style="text-align:center"><p class="section-sub">Comment je travaille</p><h2 class="section-title">Mon processus</h2><div class="divider" style="margin:0 auto 2.5rem;"></div></div>
+  <div class="process-steps">
+    <div class="step reveal"><div class="step-num">1</div><h4>Diagnostic</h4><p>Analyse de votre support. Je définis le traitement adapté et vous fournis un devis gratuit.</p></div>
+    <div class="step reveal"><div class="step-num">2</div><h4>Préparation</h4><p>Protection des zones à préserver. Je choisis le granulat et règle précisément la pression.</p></div>
+    <div class="step reveal"><div class="step-num">3</div><h4>Traitement</h4><p>J'effectue l'aérogommage ou le décapage avec soin et précision.</p></div>
+    <div class="step reveal"><div class="step-num">4</div><h4>Finition</h4><p>Je nettoie, contrôle la qualité et remet le site en état. Résultat impeccable garanti.</p></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="container"><div class="about-inner">
+  <div class="about-visual reveal">
+    <div class="about-visual-main"><img src="laura.webp" alt="Laura Sayes"/></div>
+    <div class="about-badge"><span>DAX</span><span>Landes 40</span></div>
+  </div>
+  <div class="about-text reveal">
+    <p class="section-sub">Qui suis-je</p>
+    <h2 class="section-title" style="color:var(--bleu)">Laura Sayes<br/>L'dégomme tout</h2>
+    <div class="divider"></div>
+    <p style="color:var(--gris);line-height:1.75;margin-bottom:1rem;">Basée à <strong>Saint-Paul-lès-Dax</strong>, je mets mon savoir-faire au service des particuliers et des professionnels. Passionnée de restauration, j'interviens sur tous types de surfaces avec des techniques douces et respectueuses du support.</p>
+    <ul class="about-list">
+      <li>Aucun endommagement du support sous-jacent</li>
+      <li>Je me spécialise dans la restauration de mobilier ancien</li>
+      <li>Actuellement ouverte – Je vous réponds rapidement</li>
+      <li>Devis gratuit</li>
+    </ul>
+  </div>
+</div></div></section>
+
+<section id="contact"><div class="container">
+  <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+    <p class="section-sub" style="color:rgba(255,255,255,.7);">Me contacter</p>
+    <h2 class="section-title" style="color:var(--blanc);">Contactez-moi</h2>
+    <div class="divider" style="margin:0 auto 1.5rem;background:var(--blanc);"></div>
+    <p style="color:rgba(255,255,255,.9);font-size:1.05rem;line-height:1.7;margin-bottom:2.5rem;">
+      <strong style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.06em;display:block;margin-bottom:.4rem;">DEVIS GRATUIT</strong>
+      Envoie simplement quelques photos et les dimensions de l'objet par mail :
+    </p>
+    <div style="max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;text-align:left;">
+      <div class="contact-item"><div class="contact-icon">✉</div><div class="contact-item-info"><strong>Email</strong><a href="mailto:ldegommetout@gmail.com">ldegommetout@gmail.com</a></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-item-info"><strong>Téléphone</strong><a href="tel:0642899333">06 42 89 93 33</a></div></div>
+      <div class="contact-item"><div class="contact-icon">📸</div><div class="contact-item-info"><strong>Instagram</strong><a href="https://www.instagram.com/l_degomme_tout" target="_blank">@l_degomme_tout</a></div></div>
+    </div>
+  </div>
+</div></section>
+
+<footer>
+  <p><strong>L'dégomme tout</strong> – Laura Sayes · Aérogommage &amp; Décapage · Saint-Paul-lès-Dax (40990)</p>
+  <p style="margin-top:.5rem;"><a href="tel:0642899333">06 42 89 93 33</a> · <a href="mailto:ldegommetout@gmail.com">ldegommetout@gmail.com</a> · <a href="https://www.instagram.com/l_degomme_tout" target="_blank">@l_degomme_tout</a></p>
+  <p style="margin-top:.4rem;">© <span id="year"></span> L'dégomme tout · Tous droits réservés</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+var burger = document.getElementById('burger');
+var navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', function() { navLinks.classList.toggle('open'); });
+
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+</script>
+</body>
+</html>
